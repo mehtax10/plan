@@ -629,8 +629,8 @@ function renderInboundWeek(monday){
           ? (ev.cartons ? ev.cartons.toLocaleString()+' ctns to sort' : 'Qty unknown — est. '+fmtDur(ev.durationMin))
           : (KIND_LABEL[ev.kind]||'Container')+' offload';
         el.className = 'block '+cls;
-        el.innerHTML = '<div class="time">'+fmtMin(ev.start)+' – '+fmtMin(ev.end)+' &nbsp;('+fmtDur(ev.durationMin)+')</div>'
-          +'<div class="label">'+esc(ev.container)+' — '+esc(ev.client)+'</div>'
+        el.innerHTML = '<div class="time">Est. '+fmtDur(ev.durationMin)+'</div>'
+  +'<div class="label">'+esc(ev.container)+' — '+esc(ev.client)+'</div>'
           +'<div class="meta">'+esc(qtyLine)+(ev.door?' &middot; Door '+esc(ev.door):'')+(ev.lumpers?' &middot; '+esc(ev.lumpers):'')+'</div>'
           +'<span class="tag">'+(KIND_LABEL[ev.kind]||'Freight')+'</span>';
       }
