@@ -696,16 +696,13 @@ function renderOutboundWeek(monday){
     appts.forEach(function(a){
   var startMin = toMin(a.time);
   var endMin = startMin + a.durationMin;
-  var color = colorForAppt(a);
   var el = document.createElement('div');
-  el.className = 'appt-card';
-  el.style.borderLeftColor = color.border;
-  el.style.background = color.bg;
+  el.className = 'appt-card' + (a.loadType==='PARTIAL' ? ' partial' : '');
   el.innerHTML = '<button class="del-btn" title="Delete" data-id="'+a.id+'">×</button>'
     +'<div class="time">'+fmtMin(startMin)+' – '+fmtMin(endMin)+' &nbsp;('+fmtDur(a.durationMin)+')</div>'
     +'<div class="label">'+esc(a.carrier)+' — '+esc(a.client)+'</div>'
     +'<div class="meta">'+esc(a.pallets)+' pallets</div>'
-    +'<span class="tag" style="background:'+color.border+'">'+(a.loadType==='FTL'?'FTL':'Partial/LTL')+'</span>';
+    +'<span class="tag">'+(a.loadType==='FTL'?'FTL':'Partial/LTL')+'</span>';
   body.appendChild(el);
 });
   }
