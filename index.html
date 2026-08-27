@@ -236,24 +236,6 @@
 
 <script>
 
-var APPT_PALETTE = [
-  {border:'#2563eb', bg:'#eff4ff'},
-  {border:'#0d9488', bg:'#effaf9'},
-  {border:'#d97706', bg:'#fef6ea'},
-  {border:'#7c3aed', bg:'#f6f1fe'},
-  {border:'#db2777', bg:'#fdf0f6'},
-  {border:'#059669', bg:'#ecfdf5'},
-  {border:'#ca8a04', bg:'#fefce8'},
-  {border:'#0891b2', bg:'#ecfeff'}
-];
-function colorForAppt(a){
-  var str = a.client;
-  var hash = 0;
-  for(var i=0;i<str.length;i++){ hash = (hash*31 + str.charCodeAt(i)) >>> 0; }
-  return APPT_PALETTE[hash % APPT_PALETTE.length];
-}
-
-
  
 // ── ENCRYPTED CONFIG (same source as Inbound Planning Dashboard) ─────────────
 var _ENC = '211a161f06544b6b051c0b411e555a26090e0a5b0d0b294e0018405553513a06070a011d4b204e16470060737611435319215a013e064122414971782537062a361d0b1259365f1f1d6764043e51264634532100055e5a6a0043055e0e1e38312c0d1626300347417d2e1e313619055009272b30615c5d6a7e2d0a192f0b2a6b11060a0d5f4741391b1652161d12';
