@@ -46,7 +46,7 @@
   .week-nav { display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:14px; }
   .week-nav button { background:var(--card-bg); border:1px solid var(--border); border-radius:7px; width:28px; height:28px; cursor:pointer; font-size:14px; color:var(--text); }
   .week-nav button:hover { background:var(--gray-light); }
-  .week-nav .week-label { font-size:14px; font-weight:600; min-width:210px; text-align:center; }
+  .week-nav .week-lab { font-size:14px; font-weight:600; min-width:210px; text-align:center; }
   .week-nav .today-btn { font-size:12px; font-weight:500; width:auto; padding:0 12px; height:28px; color:var(--muted); }
 
   .settings-bar { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:10px 16px; margin-bottom:14px; display:flex; gap:16px; flex-wrap:wrap; align-items:center; font-size:11.5px; color:var(--muted); }
@@ -621,9 +621,8 @@ function renderInboundWeek(monday){
       var el = document.createElement('div');
       if(ev.kind==='fixed'){
         el.className = 'block fixed';
-        el.innerHTML = '<div class="time">'+fmtMin(ev.start)+' – '+fmtMin(ev.end)+'</div>'
-          +'<div class="label">'+esc(ev.label)+'</div>'
-          +'<span class="tag">Routine</span>';
+        el.innerHTML = '<div class="label">'+esc(ev.label)+'</div>'
+  +'<span class="tag">Routine</span>';
       } else {
         var cls = ev.kind==='c40' ? 'c40' : ev.kind==='c20' ? 'c20' : 'loose';
         var qtyLine = ev.kind==='loose'
